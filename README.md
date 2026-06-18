@@ -1,4 +1,16 @@
-# Open LLM Inference Benchmarks — Real-World Throughput, Latency & TTFT on Dedicated GPUs
+<div align="center">
+
+# ⚡ Open LLM Inference Benchmarks
+
+### Real-world throughput, latency & TTFT on dedicated GPUs 🚀
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE)
+[![Benchmarks](https://img.shields.io/badge/benchmarks-2-green.svg)](#benchmark-index)
+[![vLLM](https://img.shields.io/badge/engine-vLLM-orange.svg)]()
+[![SGLang](https://img.shields.io/badge/engine-SGLang-purple.svg)]()
+[![NVIDIA GPU](https://img.shields.io/badge/NVIDIA-GPU-76B900?logo=nvidia&logoColor=white)]()
+
+</div>
 
 Reproducible inference benchmarks for open-source LLMs (Llama, Qwen, Gemma, Mistral,
 DeepSeek) served on dedicated GPUs with engines like **vLLM** and **SGLang**. Each
