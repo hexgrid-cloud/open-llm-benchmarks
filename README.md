@@ -46,6 +46,8 @@ Dataset: **ShareGPT** · max_tokens 256 · temp 0.2 · CUDA 13.0.1 · 32GB VRAM
 
 **Lesson / Outcome:** Throughput peaks at concurrency 64 (~1,280 tok/s) then flattens. Pushing to 128 leaves throughput flat but triples TTFT (5.7s -> 17.9s p95) and nearly doubles E2E latency — the extra concurrency only buys queue time. Operate at 64.
 
+![TTFT & TPOT Latency](assets/rtx5090-qwen3.5-9b-bf16-vllm/ttft-tpot-latency.png)
+
 [**Full benchmark, config & charts →**](results/rtx5090-qwen3.5-9b-bf16-vllm.md)
 
 [↑ Back to index](#benchmark-index)
