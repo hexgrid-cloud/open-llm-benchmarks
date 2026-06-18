@@ -53,11 +53,25 @@ protocol — warm-up, sampling, what's held constant, engine flags — is in
 [`data/README.md`](data/README.md). Pin `engine_version` on every run: inference-engine
 releases shift these numbers materially.
 
+## Adding a new benchmark
+
+Follow these steps for adding a new benchmark in the repository:
+1. Add the rows to `data/benchmarks.csv` — one row per concurrency level (so a 16/32/64/128 sweep = 4 rows). All four rows share the same run_id, repeat the identity columns (model, gpu, engine, version, dataset, etc.), and differ only in concurrency + the metrics. Put your Lesson / Outcome text in the lesson cell of one row (the first is fine; the rest can be blank), and set the report column to the article path.
+2. Write the detail article at `results/<gpu>-<model>-<precision>-<engine>.md`. The filename must match the report path in the CSV (that's also what the README anchor is built from).
+3. Add charts (if any) to `assets/<gpu>-<model>-<precision>-<engine>/` and reference them in the article with a relative path like ../assets/<slug>/sweep.png.
+4. Regenerate and commit:
+```bash
+python scripts/generate_readme_table.py
+git add -A && git commit -m "Add benchmark: <model> <gpu> <engine>"
+git push
+```
+
 ## Adding or removing a metric
 
-The tables are schema-driven — the generator renders whatever metric columns the CSV
-contains. Add a column to `data/benchmarks.csv` and it appears; remove it and it's gone.
-No code change. Then run:
+The tables are schema-driven — the generator renders whatever metric columns are present in the CSV. 
+Add a column to `data/benchmarks.csv` and it appears; remove it and it's gone.
+No code change. 
+Then run:
 
 ```bash
 python scripts/generate_readme_table.py
@@ -67,15 +81,6 @@ python scripts/generate_readme_table.py
 change which column defines the peak via `PEAK_COL`.)
 
 ## Reproduce / contribute
-
-```bash
-git clone https://github.com/hexgrid-cloud/open-llm-benchmarks
-cd open-llm-benchmarks
-# add a benchmark: append rows to data/benchmarks.csv (one per concurrency level),
-# write results/<gpu>-<model>-<precision>-<engine>.md, drop charts in assets/<slug>/,
-# then regenerate the index:
-python scripts/generate_readme_table.py
-```
 
 Corrections and reproductions welcome — open an issue or PR.
 
