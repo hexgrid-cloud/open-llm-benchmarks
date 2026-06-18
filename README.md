@@ -54,8 +54,6 @@ Dataset: **ShareGPT** · max_tokens 256 · temp 0.2 · CUDA 13.0.1 · 32GB VRAM
 
 ---
 
-_Auto-generated from `data/benchmarks.csv` (1 benchmarks, 4 sweep points). Metric columns = whatever the CSV contains; do not edit this section by hand._
-
 <!-- BENCHMARKS:END -->
 
 ## How these are measured
