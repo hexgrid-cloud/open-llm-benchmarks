@@ -16,28 +16,7 @@ reproduce or challenge any figure. Maintained by [HexGrid](https://hexgrid.cloud
 
 ## Benchmark index
 
-1. [Qwen3.5-9B · RTX5090 · BF16 · SGLang 0.x.y](#bench-rtx5090-qwen3-5-9b-bf16-sglang) — peak **1360.0** output tok/s @ concurrency 64
-2. [Qwen3.5-9B · RTX5090 · BF16 · vLLM 0.19](#bench-rtx5090-qwen3-5-9b-bf16-vllm) — peak **1279.2** output tok/s @ concurrency 64
-
----
-
-<a id="bench-rtx5090-qwen3-5-9b-bf16-sglang"></a>
-### Qwen3.5-9B · RTX5090 · BF16 · SGLang 0.x.y
-
-Dataset: **ShareGPT** · max_tokens 256 · temp 0.2 · CUDA 13.0.1 · 32GB VRAM
-
-| concurrency | requests | output tok/s | E2E p95 (s) | TTFT p95 (s) |
-|---|---|---|---|---|
-| 16 | 1080 | 470.0 | 7.10 | 0.62 |
-| 32 | 1080 | 1040.0 | 8.20 | 0.90 |
-| **64** | **1080** | **1360.0** | **13.80** | **5.10** |
-| 128 | 1080 | 1330.0 | 25.50 | 16.50 |
-
-**Lesson / Outcome:** ILLUSTRATIVE PLACEHOLDER — replace with the real takeaway from your SGLang run (e.g. where throughput peaks and where latency/TTFT degrade).
-
-[**Full benchmark, config & charts →**](results/rtx5090-qwen3.5-9b-bf16-sglang.md)
-
-[↑ Back to index](#benchmark-index)
+1. [Qwen3.5-9B · RTX5090 · BF16 · vLLM 0.19](#bench-rtx5090-qwen3-5-9b-bf16-vllm) — peak **1279.2** output tok/s @ concurrency 64
 
 ---
 
