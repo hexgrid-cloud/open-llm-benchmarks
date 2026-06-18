@@ -89,13 +89,11 @@ Run executed 09:41 → 10:01, sweeping 16 → 32 → 64 → 128. Performance fla
 
 ## Takeaways & caveats
 
-- Single-environment result (RTX 5090, vLLM 0.19). **Pin the engine version** — newer
+- Single-environment result (RTX 5090, vLLM 0.19). **Pin the engine version in your setup** — newer
   vLLM releases can shift these numbers materially.
 - The useful operating point here is **concurrency 64**: peak throughput before
   latency/TTFT blow up. Past it you trade responsiveness for nothing.
 - Measures serving performance, not output quality.
-- Compare against SGLang on identical hardware:
-  [SGLang run](rtx5090-qwen3.5-9b-bf16-sglang.md).
 
 ---
 
